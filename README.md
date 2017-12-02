@@ -1,38 +1,38 @@
 # vue-cli [![Build Status](https://img.shields.io/circleci/project/vuejs/vue-cli/master.svg)](https://circleci.com/gh/vuejs/vue-cli) [![npm package](https://img.shields.io/npm/v/vue-cli.svg)](https://www.npmjs.com/package/vue-cli)
 
-A simple CLI for scaffolding Vue.js projects.
+A simple CLI for scaffolding Web projects.
 
 ### Installation
 
 Prerequisites: [Node.js](https://nodejs.org/en/) (>=4.x, 6.x preferred), npm version 3+ and [Git](https://git-scm.com/).
 
 ``` bash
-$ npm install -g vue-cli
+$ npm install -g @wearekuva/kuv-cli
 ```
 
 ### Usage
 
 ``` bash
-$ vue init <template-name> <project-name>
+$ kuv init <template-name> <project-name>
 ```
 
 Example:
 
 ``` bash
-$ vue init webpack my-project
+$ kuv init webpack my-project
 ```
 
 The above command pulls the template from [vuejs-templates/webpack](https://github.com/vuejs-templates/webpack), prompts for some information, and generates the project at `./my-project/`.
 
-### vue build
+### kuv build
 
-Use vue-cli as a zero-configuration development tool for your Vue apps and component, check out the [docs](/docs/build.md).
+Use kuv-cli as a zero-configuration development tool for web apps, check out the [docs](/docs/build.md).
 
 ### Official Templates
 
-The purpose of official Vue project templates are to provide opinionated, battery-included development tooling setups so that users can get started with actual app code as fast as possible. However, these templates are un-opinionated in terms of how you structure your app code and what libraries you use in addition to Vue.js.
+The purpose of official project templates are to provide opinionated, battery-included development tooling setups so that users can get started with actual app code as fast as possible. However, these templates are un-opinionated in terms of how you structure your app code and what libraries you use.
 
-All official project templates are repos in the [vuejs-templates organization](https://github.com/vuejs-templates). When a new template is added to the organization, you will be able to run `vue init <template-name> <project-name>` to use that template. You can also run `vue list` to see all available official templates.
+All official project templates are repos in the [vuejs-templates organization](https://github.com/vuejs-templates). When a new template is added to the organization, you will be able to run `kuv init <template-name> <project-name>` to use that template. You can also run `vue list` to see all available official templates.
 
 Current available templates include:
 
@@ -50,10 +50,10 @@ Current available templates include:
 
 ### Custom Templates
 
-It's unlikely to make everyone happy with the official templates. You can simply fork an official template and then use it via `vue-cli` with:
+It's unlikely to make everyone happy with the official templates. You can simply fork an official template and then use it via `kuv-cli` with:
 
 ``` bash
-vue init username/repo my-project
+kuv init username/repo my-project
 ```
 
 Where `username/repo` is the GitHub repo shorthand for your fork.
@@ -67,7 +67,7 @@ If you would like to download from a private repository use the `--clone` flag a
 Instead of a GitHub repo, you can also use a template on your local file system:
 
 ``` bash
-vue init ~/fs/path/to-custom-template my-project
+kuv init ~/fs/path/to-custom-template my-project
 ```
 
 ### Writing Custom Templates from Scratch
@@ -179,15 +179,15 @@ The `skipInterpolation` field in the metadata file should be a [minimatch glob p
 
 ``` json
 {
-  "skipInterpolation": "src/**/*.vue"
+  "skipInterpolation": "src/**/*.js"
 }
 ```
 
 #### Metalsmith
 
-`vue-cli` uses [metalsmith](https://github.com/segmentio/metalsmith) to generate the project.
+`kuv-cli` uses [metalsmith](https://github.com/segmentio/metalsmith) to generate the project.
 
-You may customize the metalsmith builder created by vue-cli to register custom plugins.
+You may customize the metalsmith builder created by kuv-cli to register custom plugins.
 
 ```js
 {
@@ -248,7 +248,7 @@ Arguments:
 
 - `helpers`: some helpers you can use to log results.
   - `chalk`: the `chalk` module
-  - `logger`: [the built-in vue-cli logger](/lib/logger.js)
+  - `logger`: [the built-in kuv-cli logger](/lib/logger.js)
   - `files`: An array of generated files
   ```js
   {
@@ -262,20 +262,20 @@ Arguments:
 
 ### Installing a specific template version
 
-`vue-cli` uses the tool [`download-git-repo`](https://github.com/flipxfx/download-git-repo) to download the official templates used. The `download-git-repo` tool allows you to indicate a specific branch for a given repository by providing the desired branch name after a pound sign (`#`).
+`kuv-cli` uses the tool [`download-git-repo`](https://github.com/flipxfx/download-git-repo) to download the official templates used. The `download-git-repo` tool allows you to indicate a specific branch for a given repository by providing the desired branch name after a pound sign (`#`).
 
 The format needed for a specific official template is:
 
 ```
-vue init '<template-name>#<branch-name>' <project-name>
+kuv init '<template-name>#<branch-name>' <project-name>
 ```
 
 Example:
 
-Installing the [`1.0` branch](https://github.com/vuejs-templates/webpack-simple/tree/1.0) of the webpack-simple vue template:
+Installing the [`1.0` branch](https://github.com/vuejs-templates/webpack-simple/tree/1.0) of the webpack-simple template:
 
 ```
-vue init 'webpack-simple#1.0' mynewproject
+kuv init 'webpack-simple#1.0' mynewproject
 ```
 
 _Note_: The surrounding quotes are necessary on zsh shells because of the special meaning of the `#` character.
